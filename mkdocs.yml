@@ -1,0 +1,7 @@
+site_name: Projecte FOG Alex 
+nav:
+  - Home: index.md
+  - Sprint2: sprint2.md
+  - Sprint3: sprint3.md
+  - Sprint4: sprint4.md
+
