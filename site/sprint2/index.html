@@ -58,6 +58,28 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#modificasio">Modificasio</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verificacio">Verificacio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paraules-de-pas-als-grup">Paraules de pas als grup</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestio-de-permisos">GESTIÓ DE PERMISOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-normals">Permisos normals</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#umask">Umask</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-especials">Permisos especials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acls">ACLs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestio-de-processos">GESTIÓ DE PROCESSOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria-de-prioritat-dels-processos">Teoria de Prioritat dels processos</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -106,7 +128,7 @@
 <p>Guarda informacio de les contrasenyes dels usuaris en format xifrat i altres paràmetres de seguretat(expiració de la contrasenya...)
 El segon camp pot conteni * que significa que el compte esta totalment desavilitat o ! indica que està deshabilitat per accedir-hi amb contrasenya.
 Tambe es important saber que el camp "epoch"  representa la data de l'últim canvi de contrasenya de l'usuari.</p>
-<p><img alt="1era" src="/img/cap7.png" /></p>
+<p><img alt="1era" src="../cap7.png" /></p>
 <p>2--/etc/passwd</p>
 <p>Conté la llista d’usuaris del sistema, el nom d’usuari, l’ID d’usuari (UID), l’ID de grup (GID), la carpeta personal i el shell per defecte...</p>
 <p>3--/etc/gshadow</p>
@@ -117,58 +139,80 @@ Tambe es important saber que el camp "epoch"  representa la data de l'últim can
 <h3 id="creacio-dusuaris">Creació d'usuaris</h3>
 <p>Les maneres més comunes de crear usuaris en Ubuntu són: (adduser, adduser)
 adduser te fa una sèrie de preguntes inicials i user add no .
-<img alt="Error" src="/img/cap78.png" /></p>
+<img alt="Error" src="../cap78.png" /></p>
 <p>Per a elimina un usuari usem deluser podem usa sudo deluser --remove-home (usuari) para elimina tame el directori personal 
-<img alt="8era" src="/img/cap8.png" /></p>
+<img alt="8era" src="../cap8.png" /></p>
 <h3 id="creacio-de-grups">Creació de grups</h3>
 <p>Per a crear un grup he usat addgroup
-<img alt="78era" src="/img/cap99.png" /></p>
+<img alt="78era" src="../cap99.png" /></p>
 <p>I per a eliminarlo delgroup
-<img alt="65era" src="/img/cap65.png" /></p>
+<img alt="65era" src="../cap65.png" /></p>
 <h3 id="modificasio">Modificasio</h3>
 <p>Crearem un altre grup
-<img alt="fuc" src="/img/cap111.png" /></p>
+<img alt="fuc" src="../cap111.png" /></p>
 <p>I li cambiarem lo nom a test2 en la comanda:
-<img alt="fail" src="/img/cap112.png" /></p>
+<img alt="fail" src="../cap112.png" /></p>
 <p>Una altra modificació seria canvia la contrasenya amb passwd
-<img alt="fail" src="/img/cap113.png" /></p>
+<img alt="fail" src="../cap113.png" /></p>
 <p>Ara assigno l'usuari pere com a administrador del grup jocs amb gpasswd. Després, afegeixo sprinttt al grup jocs amb usermod. Finalment, verifico que sprinttt és al grup /etc/group amb grep
-<img alt="Error" src="/img/007.png" /></p>
-<h1 id="verificacio">Verificacio</h1>
+<img alt="Error" src="../007.png" /></p>
+<h3 id="verificacio">Verificacio</h3>
 <p>Comprovarem el canvi de nom:
-<img alt="Error" src="/img/cap100.png" /></p>
-<h1 id="paraules-de-pas-als-grup">Paraules de pas als grup</h1>
-<p><img alt="Error" src="/img/cap899.png" /></p>
-<p><img alt="Error" src="/img/cap999.png" /></p>
+<img alt="Error" src="../cap100.png" /></p>
+<h3 id="paraules-de-pas-als-grup">Paraules de pas als grup</h3>
+<p>He canviat la contrasenya del grup grupsprint utilitzant gpasswd i després m'he unit al grup amb newgrp.
+<img alt="Error" src="../cap899.png" /></p>
+<p><img alt="Error" src="../cap999.png" /></p>
 <h2 id="gestio-de-permisos">GESTIÓ DE PERMISOS</h2>
 <h3 id="permisos-normals">Permisos normals</h3>
+<p>He creat el fitxer ex1.txt i ja existia ex2.txt. Després he comprovat els permisos inicials.
+<img alt="Error" src="../creacio.png" /></p>
+<p>He canviat els permisos de ex1.txt a 640 per donar només lectura i escriptura a l'usuari i lectura al grup.
+<img alt="Error" src="../normal.png" /></p>
+<p>He afegit permisos d'execució per al grup (g+x) al fitxer ex1.txt.
+<img alt="Error" src="../sumaper.png" /></p>
+<p>Finalent he aplicat permisos d'execució de manera recursiva a tots els fitxers dins de la carpeta testsprint2.
+<img alt="Error" src="../recusi.png" /></p>
 <h3 id="umask">Umask</h3>
+<p>Umask defineix els permisos per defecte dels fitxers i directoris que es creen.</p>
+<ol>
+<li>Canviar la màscara temporalment  </li>
+</ol>
+<p><img alt="Error" src="../umasctemp.png" /></p>
+<ol>
+<li>Modificar la màscara global<br />
+Per establir un valor de umask que s'apliqui a tots els usuaris:<br />
+Editar /etc/login.defs:
+<img alt="Error" src="../umasc.png" /></li>
+</ol>
+<p>Comprovasio: Reiniciem la maquina<br />
+<img alt="Error" src="../umasctest.png" /></p>
 <h3 id="permisos-especials">Permisos especials</h3>
 <h3 id="acls">ACLs</h3>
 <p>Esta comanda modifica els permisos ACL (Access Control List) que lleva tots els permisos a l'usuari prova3 al directori prova.</p>
-<p><img alt="Error" src="/img/acl.png" /></p>
+<p><img alt="Error" src="../acl.png" /></p>
 <p>La comanda getfacl que es fa servir per consultar els permisos ACL
-<img alt="Error" src="/img/231.png" /></p>
+<img alt="Error" src="../231.png" /></p>
 <h2 id="gestio-de-processos">GESTIÓ DE PROCESSOS</h2>
 <ol>
 <li>
 <p>top<br />
 Mostra en temps real els processos en execució, el seu consum de CPU, memòria, i altres detalls del sistema.(monitoritzar l'estat general del sistema)
-<img alt="Error" src="/img/top.png" /></p>
+<img alt="Error" src="../top.png" /></p>
 </li>
 <li>
 <p>pstree -p -h alumnat:<br />
 Mostra els processos en forma d'arbre jeràrquic.
 -p: Inclou els identificadors dels processos (PIDs).
 -h: Ressalta el procés en execució actual.
-<img alt="Error" src="/img/pst.png" /></p>
+<img alt="Error" src="../pst.png" /></p>
 </li>
 <li>
 <p>ps aux | grep profe | wc -l:<br />
 ps aux: Llista tots els processos del sistema.
 grep profe: Filtra els processos que contenen "profe".
 wc -l: Compta el nombre tel nombre de processos relacionats amb profe.
-<img alt="Error" src="/img/psaux.png" /></p>
+<img alt="Error" src="../psaux.png" /></p>
 </li>
 <li>
 <p>fg %1:<br />
@@ -176,24 +220,24 @@ Porta un procés aturat (en segon pla) al primer pla.
 %1 és el número del treball que es vol restaurar.</p>
 </li>
 </ol>
-<p><img alt="Error" src="/img/fg.png" /></p>
+<p><img alt="Error" src="../fg.png" /></p>
 <p>5.kill -9 05574:<br />
 Mata un procés de manera immediata.
 -9:Forçar la terminació del procés amb el PID 05574.</p>
-<p><img alt="Error" src="/img/kill.png" /></p>
+<p><img alt="Error" src="../kill.png" /></p>
 <p>6.jobs:<br />
 Llista els processos aturats o en segon pla.
-<img alt="Error" src="/img/jobs.png" /></p>
-<h2 id="teoria-de-prioritat-dels-processos">Teoria de Prioritat dels processos</h2>
+<img alt="Error" src="../jobs.png" /></p>
+<h3 id="teoria-de-prioritat-dels-processos">Teoria de Prioritat dels processos</h3>
 <p>Els processos tenen prioritats que van del -20 (màxima prioritat) al 19 (mínima prioritat).
 Per defecte, la prioritat és 0.</p>
 <p>7.renice -n -19 -p 10099:<br />
 Modifica la prioritat d'un procés existent.
 Exemple: renice -n -19 -p 1234 ajusta el procés amb PID 1234 a la màxima prioritat (-19).
-<img alt="Error" src="/img/renice.png" /></p>
+<img alt="Error" src="../renice.png" /></p>
 <h1 id="gestio-de-memoria">Gestio de memoria</h1>
-<p><img alt="Error" src="/img/ges.png" /></p>
-<p><img alt="Error" src="/img/ges2.png" /></p>
+<p><img alt="Error" src="../ges.png" /></p>
+<p><img alt="Error" src="../ges2.png" /></p>
               
             </div>
           </div><footer>
