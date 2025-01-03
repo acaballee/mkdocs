@@ -195,6 +195,8 @@ Crearem un usuari de prova
 
 ![Error](./smb.png)
 
+![Error](./client8.png)
+
 ![Error](./client2.png)
 
 
