@@ -171,24 +171,32 @@ Amb tune2fs -l, es mostra el nombre de blocs (524288), mida per bloc (4096 bytes
 
 ![Error](./mount.png)
 
-Afegirem una linia per munta automaticamt /dev/sdb1
+Afegirem una linia per munta automaticamt /dev/sdb1  
+Els 0 al final signifiquen que no estarà inclòs en les còpies de seguretat (penúltim) i que no es comprovarà a l'arrancada (últim).
 ![Error](./nanofst.png)
 
 ##COMPARTIR CARPETES
-
+Per a compartir en samba necessitarem insta-la samba nautilus-share.
 ![Error](./install.png)
 
+Podem fer-ho per interfície però sol dona errors i així que u farem per terminal.
 ![Error](./grafic.png)
-###Client
-![Error](./client1.png)
 
+Configurem el fitxe /etc/samba/smb.conf per a compartir la carpeta partició1.
 ![Error](./nanosmb.png)
 
+Comprovarem que el servei està en funcionament i que no dona errors usant la comanda systemctl status smbd
 ![Error](./systemctl.png)
 
+Crearem un usuari de prova 
 ![Error](./adusergina.png)
 
+###Client
+
 ![Error](./smb.png)
+
+![Error](./client2.png)
+
 
 ##COPIES DE SEGURETAT
 ###Conceptes teòrics
@@ -225,8 +233,10 @@ He triat el programa de còpies Deja Dup
 Seleccionem on la volem guarda (local, Google Drive, OneDrive... ) ió he triat Google Drive.  
 ![Error](./deja2.png)
 
+Per a una major seguretat podem posar una contrasenya
 ![Error](./deja3.png)
 
+Aquí podem veure la còpia la data i tenim l'opció de restaurar o de visualitzar.
 ![Error](./deja4.png)
 
 ###Comandes
