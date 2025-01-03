@@ -276,17 +276,24 @@ Exemple: renice -n -19 -p 1234 ajusta el procés amb PID 1234 a la màxima prior
 <p>Amb tune2fs -l, es mostra el nombre de blocs (524288), mida per bloc (4096 bytes) i blocs per grup (32768).
 <img alt="Error" src="../tune2fs.png" /></p>
 <p><img alt="Error" src="../mount.png" /></p>
-<p>Afegirem una linia per munta automaticamt /dev/sdb1
+<p>Afegirem una linia per munta automaticamt /dev/sdb1<br />
+Els 0 al final signifiquen que no estarà inclòs en les còpies de seguretat (penúltim) i que no es comprovarà a l'arrancada (últim).
 <img alt="Error" src="../nanofst.png" /></p>
 <h2 id="compartir-carpetes">COMPARTIR CARPETES</h2>
-<p><img alt="Error" src="../install.png" /></p>
-<p><img alt="Error" src="../grafic.png" /></p>
+<p>Per a compartir en samba necessitarem insta-la samba nautilus-share.
+<img alt="Error" src="../install.png" /></p>
+<p>Podem fer-ho per interfície però sol dona errors i així que u farem per terminal.
+<img alt="Error" src="../grafic.png" /></p>
+<p>Configurem el fitxe /etc/samba/smb.conf per a compartir la carpeta partició1.
+<img alt="Error" src="../nanosmb.png" /></p>
+<p>Comprovarem que el servei està en funcionament i que no dona errors usant la comanda systemctl status smbd
+<img alt="Error" src="../systemctl.png" /></p>
+<p>Crearem un usuari de prova 
+<img alt="Error" src="../adusergina.png" /></p>
 <h3 id="client">Client</h3>
-<p><img alt="Error" src="../client1.png" /></p>
-<p><img alt="Error" src="../nanosmb.png" /></p>
-<p><img alt="Error" src="../systemctl.png" /></p>
-<p><img alt="Error" src="../adusergina.png" /></p>
 <p><img alt="Error" src="../smb.png" /></p>
+<p><img alt="Error" src="../client8.png" /></p>
+<p><img alt="Error" src="../client2.png" /></p>
 <h2 id="copies-de-seguretat">COPIES DE SEGURETAT</h2>
 <h3 id="conceptes-teorics">Conceptes teòrics</h3>
 <p>Establir una bona política de còpies de seguretat  </p>
@@ -334,8 +341,10 @@ Exemple: renice -n -19 -p 1234 ajusta el procés amb PID 1234 a la màxima prior
 <img alt="Error" src="../deja1.png" />  </p>
 <p>Seleccionem on la volem guarda (local, Google Drive, OneDrive... ) ió he triat Google Drive.<br />
 <img alt="Error" src="../deja2.png" /></p>
-<p><img alt="Error" src="../deja3.png" /></p>
-<p><img alt="Error" src="../deja4.png" /></p>
+<p>Per a una major seguretat podem posar una contrasenya
+<img alt="Error" src="../deja3.png" /></p>
+<p>Aquí podem veure la còpia la data i tenim l'opció de restaurar o de visualitzar.
+<img alt="Error" src="../deja4.png" /></p>
 <h3 id="comandes">Comandes</h3>
 <table>
 <thead>
