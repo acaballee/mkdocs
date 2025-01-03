@@ -80,6 +80,34 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#teoria-de-prioritat-dels-processos">Teoria de Prioritat dels processos</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gestio-de-memoria">Gestio de memoria</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#particions">PARTICIONS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#compartir-carpetes">COMPARTIR CARPETES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#client">Client</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copies-de-seguretat">COPIES DE SEGURETAT</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#conceptes-teorics">Conceptes teòrics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#programes-en-interficie">Programes en interficie</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comandes">Comandes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#automatitsacio">Automatitsacio</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cron">Cron</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ancron">Ancron</a>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     </ul>
@@ -235,9 +263,122 @@ Per defecte, la prioritat és 0.</p>
 Modifica la prioritat d'un procés existent.
 Exemple: renice -n -19 -p 1234 ajusta el procés amb PID 1234 a la màxima prioritat (-19).
 <img alt="Error" src="../renice.png" /></p>
-<h1 id="gestio-de-memoria">Gestio de memoria</h1>
+<h3 id="gestio-de-memoria">Gestio de memoria</h3>
 <p><img alt="Error" src="../ges.png" /></p>
-<p><img alt="Error" src="../ges2.png" /></p>
+<p><img alt="Error" src="../ges2.png" />  </p>
+<h2 id="particions">PARTICIONS</h2>
+<p>Primer usarem fdisk -l que llista els discos disponibles al sistema.
+<img alt="Error" src="../fdisk.png" /></p>
+<p>Farem una partició mbr amb les opcions per defecte
+<img alt="Error" src="../parti.png" /></p>
+<p>Utilitzarem mkfs.ext4 per crear un sistema de fitxers EXT4 al dispositiu /dev/sdb1
+<img alt="Error" src="../mkfs.png" /></p>
+<p>Amb tune2fs -l, es mostra el nombre de blocs (524288), mida per bloc (4096 bytes) i blocs per grup (32768).
+<img alt="Error" src="../tune2fs.png" /></p>
+<p><img alt="Error" src="../mount.png" /></p>
+<p>Afegirem una linia per munta automaticamt /dev/sdb1
+<img alt="Error" src="../nanofst.png" /></p>
+<h2 id="compartir-carpetes">COMPARTIR CARPETES</h2>
+<p><img alt="Error" src="../install.png" /></p>
+<p><img alt="Error" src="../grafic.png" /></p>
+<h3 id="client">Client</h3>
+<p><img alt="Error" src="../client1.png" /></p>
+<p><img alt="Error" src="../nanosmb.png" /></p>
+<p><img alt="Error" src="../systemctl.png" /></p>
+<p><img alt="Error" src="../adusergina.png" /></p>
+<p><img alt="Error" src="../smb.png" /></p>
+<h2 id="copies-de-seguretat">COPIES DE SEGURETAT</h2>
+<h3 id="conceptes-teorics">Conceptes teòrics</h3>
+<p>Establir una bona política de còpies de seguretat  </p>
+<ul>
+<li><strong>Completes</strong> (Sempre que pugueu, una completa és el millor)</li>
+<li><strong>Avantatges</strong>:<ul>
+<li>Per a restaurar una còpia completa només cal la última completa.</li>
+</ul>
+</li>
+<li>
+<p><strong>Desavantatges</strong>:</p>
+<ul>
+<li>Ocupa més espai.</li>
+</ul>
+</li>
+<li>
+<p><strong>Diferencials</strong>: Fa una còpia de la diferència en l'última còpia completa per anar actualitzant.</p>
+</li>
+<li><strong>Avantatges</strong>:<ul>
+<li>Ocupa menys espai.</li>
+</ul>
+</li>
+<li>
+<p><strong>Desavantatges</strong>:</p>
+<ul>
+<li>Per a restaurar necessites la última completa i la última diferencial.</li>
+</ul>
+</li>
+<li>
+<p><strong>Incrementals</strong></p>
+</li>
+<li><strong>Avantatges</strong>:<ul>
+<li>Ocupa encara menys espai.</li>
+</ul>
+</li>
+<li><strong>Desavantatges</strong>:<ul>
+<li>Per a restaurar necessites la última completa, la última diferencial i totes les incrementals.</li>
+</ul>
+</li>
+</ul>
+<h3 id="programes-en-interficie">Programes en interficie</h3>
+<p>He triat el programa de còpies Deja Dup<br />
+<img alt="Error" src="../store.png" />  </p>
+<p>És molt senzill d'utilitza triarem usuari i excepcions<br />
+<img alt="Error" src="../deja1.png" />  </p>
+<p>Seleccionem on la volem guarda (local, Google Drive, OneDrive... ) ió he triat Google Drive.<br />
+<img alt="Error" src="../deja2.png" /></p>
+<p><img alt="Error" src="../deja3.png" /></p>
+<p><img alt="Error" src="../deja4.png" /></p>
+<h3 id="comandes">Comandes</h3>
+<table>
+<thead>
+<tr>
+<th>Comanda</th>
+<th>Funció principal</th>
+<th>Ús comú</th>
+<th>Exemple d'ús</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cp</code></td>
+<td>Es una copiar fitxers o directoris</td>
+<td>Copiar fitxers en local</td>
+<td><code>cp origen destí</code></td>
+</tr>
+<tr>
+<td><code>rsync</code></td>
+<td>Sincronitzar fitxers i directoris</td>
+<td>Sincronitzar dades locals o remotes</td>
+<td><code>rsync -av origen destí</code></td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>Copiar i convertir dades a baix nivell</td>
+<td>Crear imatges de discos o còpies binàries</td>
+<td><code>dd if=origen of=destí bs=blocksize</code></td>
+</tr>
+</tbody>
+</table>
+<p>cp: es una copia simple no inteligen que no mira res i es fa en local</p>
+<p><img alt="Error" src="../cp.png" />  </p>
+<p>rsync: és una còpia intel·ligent que només còpia els modificats i es pot fer en màquines remotes via SSH. 
+<img alt="Error" src="../rsy.png" />  </p>
+<p>dd: no és pròpiament per fe còpies d'arxius, treballa en local, treballa a escala de bloc. S'utilitza molt per a clonació de discos i particions.<br />
+També la podem usar per esborrar millor els arxius
+<img alt="Error" src="../dd.png" /></p>
+<p><img alt="Error" src="../ddmount.png" /></p>
+<p><img alt="Error" src="../md5.png" /></p>
+<h3 id="automatitsacio">Automatitsacio</h3>
+<h4 id="cron">Cron</h4>
+<h4 id="ancron">Ancron</h4>
               
             </div>
           </div><footer>

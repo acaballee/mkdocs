@@ -149,8 +149,111 @@ Exemple: renice -n -19 -p 1234 ajusta el procés amb PID 1234 a la màxima prior
 
 
 
-#Gestio de memoria
+###Gestio de memoria
 
 ![Error](./ges.png)
 
-![Error](./ges2.png)
+![Error](./ges2.png)  
+
+## PARTICIONS
+Primer usarem fdisk -l que llista els discos disponibles al sistema.
+![Error](./fdisk.png)
+
+Farem una partició mbr amb les opcions per defecte
+![Error](./parti.png)
+
+Utilitzarem mkfs.ext4 per crear un sistema de fitxers EXT4 al dispositiu /dev/sdb1
+![Error](./mkfs.png)
+
+Amb tune2fs -l, es mostra el nombre de blocs (524288), mida per bloc (4096 bytes) i blocs per grup (32768).
+![Error](./tune2fs.png)
+
+
+![Error](./mount.png)
+
+Afegirem una linia per munta automaticamt /dev/sdb1
+![Error](./nanofst.png)
+
+##COMPARTIR CARPETES
+
+![Error](./install.png)
+
+![Error](./grafic.png)
+###Client
+![Error](./client1.png)
+
+![Error](./nanosmb.png)
+
+![Error](./systemctl.png)
+
+![Error](./adusergina.png)
+
+![Error](./smb.png)
+
+##COPIES DE SEGURETAT
+###Conceptes teòrics
+
+Establir una bona política de còpies de seguretat  
+
+- **Completes** (Sempre que pugueu, una completa és el millor)
+  - **Avantatges**:
+    - Per a restaurar una còpia completa només cal la última completa.
+  - **Desavantatges**:
+    - Ocupa més espai.
+
+- **Diferencials**: Fa una còpia de la diferència en l'última còpia completa per anar actualitzant.
+  - **Avantatges**:
+    - Ocupa menys espai.
+  - **Desavantatges**:
+    - Per a restaurar necessites la última completa i la última diferencial.
+
+- **Incrementals**
+  - **Avantatges**:
+    - Ocupa encara menys espai.
+  - **Desavantatges**:
+    - Per a restaurar necessites la última completa, la última diferencial i totes les incrementals.
+
+
+
+###Programes en interficie
+He triat el programa de còpies Deja Dup  
+![Error](./store.png)  
+
+És molt senzill d'utilitza triarem usuari i excepcions  
+![Error](./deja1.png)  
+
+Seleccionem on la volem guarda (local, Google Drive, OneDrive... ) ió he triat Google Drive.  
+![Error](./deja2.png)
+
+![Error](./deja3.png)
+
+![Error](./deja4.png)
+
+###Comandes
+| Comanda | Funció principal                     | Ús comú                                    | Exemple d'ús                                  |
+|---------|--------------------------------------|--------------------------------------------|-----------------------------------------------|
+| `cp`    | Es una copiar fitxers o directoris          | Copiar fitxers en local             | `cp origen destí`                             |
+| `rsync` | Sincronitzar fitxers i directoris    | Sincronitzar dades locals o remotes        | `rsync -av origen destí`                      |
+| `dd`    | Copiar i convertir dades a baix nivell | Crear imatges de discos o còpies binàries | `dd if=origen of=destí bs=blocksize`          |
+
+
+cp: es una copia simple no inteligen que no mira res i es fa en local
+
+![Error](./cp.png)  
+
+rsync: és una còpia intel·ligent que només còpia els modificats i es pot fer en màquines remotes via SSH. 
+![Error](./rsy.png)  
+
+dd: no és pròpiament per fe còpies d'arxius, treballa en local, treballa a escala de bloc. S'utilitza molt per a clonació de discos i particions.  
+També la podem usar per esborrar millor els arxius
+![Error](./dd.png)
+
+![Error](./ddmount.png)
+
+![Error](./md5.png)
+
+###Automatitsacio
+
+####Cron
+####Ancron
+
