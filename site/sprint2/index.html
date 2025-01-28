@@ -100,13 +100,23 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#comandes">Comandes</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#automatitsacio">Automatitsacio</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#cron">Cron</a>
+        </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ancron">Ancron</a>
+    <li class="toctree-l2"><a class="reference internal" href="#automatitsacio">AUTOMATITSACIO</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-teoria">4.1 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#diferencies-entre-cron-i-anacron">Diferències entre cron i anacron</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#quan-utilitzar-cron-o-anacron">Quan utilitzar cron o anacron</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracio-de-cron">Configuració de cron</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cron">Cron</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ancron">Ancron</a>
     </li>
         </ul>
     </li>
@@ -385,9 +395,40 @@ També la podem usar per esborrar millor els arxius
 <img alt="Error" src="../dd.png" /></p>
 <p><img alt="Error" src="../ddmount.png" /></p>
 <p><img alt="Error" src="../md5.png" /></p>
-<h3 id="automatitsacio">Automatitsacio</h3>
-<h4 id="cron">Cron</h4>
-<h4 id="ancron">Ancron</h4>
+<h2 id="automatitsacio">AUTOMATITSACIO</h2>
+<h3 id="41-teoria">4.1 Teoria</h3>
+<h4 id="diferencies-entre-cron-i-anacron">Diferències entre <code>cron</code> i <code>anacron</code></h4>
+<p>En sistemes operatius anteriors, aquestes eines funcionaven per separat. Ara estan integrades i treballen conjuntament per automatitzar tasques.</p>
+<h4 id="quan-utilitzar-cron-o-anacron">Quan utilitzar <code>cron</code> o <code>anacron</code></h4>
+<ul>
+<li><strong><code>anacron</code></strong>:  </li>
+<li>És útil quan l'ordinador pot estar apagat.  </li>
+<li>Quan l'ordinador s'encén, <code>anacron</code> detecta si hi ha tasques programades que no s'han executat perquè l'equip estava apagat i les executa.  </li>
+<li>
+<p>S’utilitza per automatitzar tasques a nivell general o del sistema operatiu.  </p>
+</li>
+<li>
+<p><strong><code>cron</code></strong>:  </p>
+</li>
+<li>S'utilitza principalment per executar una acció molt concreta a una hora determinada.  </li>
+<li>És recomanable quan sabem que l'ordinador estarà encès en el moment de l'execució programada.  </li>
+</ul>
+<h4 id="configuracio-de-cron">Configuració de <code>cron</code></h4>
+<p><code>cron</code> ofereix dues opcions principals:<br />
+1. <strong>Arxiu global <code>/etc/crontab</code></strong>:<br />
+   - S'utilitza per definir tasques globals per a tots els usuaris del sistema.  </p>
+<ol>
+<li><strong>Crontab per a usuaris específics</strong>:  </li>
+<li>S'utilitza la comanda <code>crontab -e -u USUARI</code> per definir tasques específiques per a un usuari concret.  </li>
+</ol>
+<p>A més, dintre del directori <code>/etc/cron</code>, hi ha carpetes preparades per executar tasques automàticament.</p>
+<h3 id="cron">Cron</h3>
+<p><img alt="Error" src="../ancron1.png" /></p>
+<p><img alt="Error" src="../ancron2.png" /></p>
+<p><img alt="Error" src="../ancron3.png" /></p>
+<p><img alt="Error" src="../ancron4.png" /></p>
+<p><img alt="Error" src="../ancron5.png" /></p>
+<h3 id="ancron">Ancron</h3>
               
             </div>
           </div><footer>

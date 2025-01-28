@@ -264,8 +264,46 @@ També la podem usar per esborrar millor els arxius
 
 ![Error](./md5.png)
 
-###Automatitsacio
+##AUTOMATITSACIO
+### 4.1 Teoria
 
-####Cron
-####Ancron
+#### Diferències entre `cron` i `anacron`
+
+En sistemes operatius anteriors, aquestes eines funcionaven per separat. Ara estan integrades i treballen conjuntament per automatitzar tasques.
+
+#### Quan utilitzar `cron` o `anacron`
+
+- **`anacron`**:  
+  - És útil quan l'ordinador pot estar apagat.  
+  - Quan l'ordinador s'encén, `anacron` detecta si hi ha tasques programades que no s'han executat perquè l'equip estava apagat i les executa.  
+  - S’utilitza per automatitzar tasques a nivell general o del sistema operatiu.  
+
+- **`cron`**:  
+  - S'utilitza principalment per executar una acció molt concreta a una hora determinada.  
+  - És recomanable quan sabem que l'ordinador estarà encès en el moment de l'execució programada.  
+
+#### Configuració de `cron`
+
+`cron` ofereix dues opcions principals:  
+1. **Arxiu global `/etc/crontab`**:  
+   - S'utilitza per definir tasques globals per a tots els usuaris del sistema.  
+
+2. **Crontab per a usuaris específics**:  
+   - S'utilitza la comanda `crontab -e -u USUARI` per definir tasques específiques per a un usuari concret.  
+
+A més, dintre del directori `/etc/cron`, hi ha carpetes preparades per executar tasques automàticament.
+
+
+###Cron
+![Error](./ancron1.png)
+
+![Error](./ancron2.png)
+
+![Error](./ancron3.png)
+
+![Error](./ancron4.png)
+
+![Error](./ancron5.png)
+
+###Ancron
 

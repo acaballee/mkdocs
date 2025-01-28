@@ -50,7 +50,19 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Sprint3</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#particions">Particions</a>
+    <li class="toctree-l2"><a class="reference internal" href="#instalacio-ldap">Instalacio LDAP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#preparatius">Preparatius</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestio-dusuaris">Gestió d’usuaris</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unir-equips-al-domini">Unir equips al domini</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#servidor-samba">Servidor SAMBA</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#servidor-nfs">Servidor NFS</a>
     </li>
     </ul>
                 </li>
@@ -86,8 +98,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="holaaaaaaaaaaaa">Holaaaaaaaaaaaa</h1>
-<h2 id="particions">Particions</h2>
+                <h1 id="sprint-3s">Sprint 3S</h1>
+<h2 id="instalacio-ldap">Instalacio LDAP</h2>
+<h3 id="preparatius">Preparatius</h3>
+<p>Ubuntu 24 (sebidor)<br />
+Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però para passa del pas u farem en interfície
+<img alt="Error" src="../red.png" />  </p>
+<p>/etc/hostname: Defineix el nom del sistema com "alexcaballe".
+<img alt="Error" src="../hostname.png" />  </p>
+<p>/etc/hosts: Assigna noms de domini a IPs locals(Aquesta configuració permet resoldre el nom de l'equip sense necessitat de DNS extern.)
+<img alt="Error" src="../hosts.png" /></p>
+<p>Per a fer la base del nostre domini tenim dos opcion o feru pels arxius base o a través de una comanda natros u farem per comanda  </p>
+<p>Aquí veurem la configuració que he aplicat al servidor LDAP.
+<img alt="Error" src="../recon.png" /></p>
+<p><img alt="Error" src="../recon1.png" /></p>
+<p><img alt="Error" src="../recon2.png" /></p>
+<p><img alt="Error" src="../recon3.png" /></p>
+<p><img alt="Error" src="../recon4.png" /></p>
+<p><img alt="Error" src="../recon5.png" /></p>
+<p><img alt="Error" src="../recon6.png" />  </p>
+<p>En aquesta comanda veurem el contingut actual
+<img alt="Error" src="../slapcat.png" />  </p>
+<p><img alt="Error" src="../lsdesc.png" /></p>
+<p><img alt="Error" src="../grupld.png" /></p>
+<p><img alt="Error" src="../usuld.png" /></p>
+<p><img alt="pendent" src="./pendentld.png" />  </p>
+<ul>
+<li><code>-c</code>: Continua el procés encara que hi hagi errors.  </li>
+<li><code>-x</code>: Utilitza autenticació simple (no SASL).  </li>
+<li><code>-D</code>: Especifica el DN de l'usuari administrador.  </li>
+<li><code>-W</code>: Demana la contrasenya de manera interactiva.  </li>
+<li><code>-f</code>: Indica el fitxer LDIF amb les dades a afegir.  </li>
+</ul>
+<p><img alt="Error" src="../ldapadd99.png" /></p>
+<p><img alt="Error" src="../slapcat2.png" /></p>
+<p>Client+------------------------------------------</p>
+<p><img alt="Error" src="../installnscd.png" /></p>
+<p><img alt="Error" src="../ldapconf1.png" /></p>
+<p><img alt="Error" src="../ldapconf2.png" /></p>
+<p><img alt="Error" src="../ldapconf3.png" /></p>
+<p><img alt="Error" src="../ldapconf4.png" /></p>
+<p><img alt="Error" src="../ldapconf5.png" /></p>
+<p><img alt="Error" src="../ldapconf5.png" /></p>
+<p>Si lo client no se valida sa de fe un reconfigure del paquet anterior</p>
+<p><img alt="Error" src="../nsswitch.png" /></p>
+<p><img alt="Error" src="../commonpas.png" /></p>
+<p><img alt="Error" src="../commonses.png" /></p>
+<p><img alt="Error" src="../prova789.png" /></p>
+<h2 id="gestio-dusuaris">Gestió d’usuaris</h2>
+<h2 id="unir-equips-al-domini">Unir equips al domini</h2>
+<h2 id="servidor-samba">Servidor SAMBA</h2>
+<h2 id="servidor-nfs">Servidor NFS</h2>
               
             </div>
           </div><footer>
