@@ -1,4 +1,4 @@
-# Sprint 3S
+# Sprint 3
 
 
 ## Instalacio LDAP
@@ -33,9 +33,10 @@ Aquí veurem la configuració que he aplicat al servidor LDAP.
 En aquesta comanda veurem el contingut actual
 ![Error](./slapcat.png)  
 
-
+Usarem els fitxes prefets pera a crear els grups i usuaris
 ![Error](./lsdesc.png)
 
+En les següents dues captures adapto els fitxes al meu domini
 ![Error](./grupld.png)
 
 ![Error](./usuld.png)
@@ -50,20 +51,27 @@ En aquesta comanda veurem el contingut actual
 
 ![Error](./ldapadd99.png)
 
+I aquí un apartat posterior a la configuració
 ![Error](./slapcat2.png)
 
 
 Client+------------------------------------------
 
-
+Instal·lació de nscd
 ![Error](./installnscd.png)
 
+###Configuració de ldap-auth-config  
+
+Posarem la IP del servidor LDAP.
 ![Error](./ldapconf1.png)
 
+Proporcionarem el nom del domini
 ![Error](./ldapconf2.png)
 
+I la quenta que usarem
 ![Error](./ldapconf3.png)
 
+Instal·larem aquest paquet para que el sistema Linux s'autentifique mediant-te un servidor LDAP
 ![Error](./ldapconf4.png)
 
 ![Error](./ldapconf5.png)
@@ -78,7 +86,7 @@ Si lo client no se valida sa de fe un reconfigure del paquet anterior
 
 ![Error](./commonses.png)
 
-
+Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment
 ![Error](./prova789.png)
 
 ## Gestió d’usuaris 
