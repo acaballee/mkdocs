@@ -54,6 +54,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#preparatius">Preparatius</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuracio-de-ldap-auth-config">Configuració de ldap-auth-config</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#gestio-dusuaris">Gestió d’usuaris</a>
@@ -98,7 +100,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="sprint-3s">Sprint 3S</h1>
+                <h1 id="sprint-3">Sprint 3</h1>
 <h2 id="instalacio-ldap">Instalacio LDAP</h2>
 <h3 id="preparatius">Preparatius</h3>
 <p>Ubuntu 24 (sebidor)<br />
@@ -119,8 +121,10 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <p><img alt="Error" src="../recon6.png" />  </p>
 <p>En aquesta comanda veurem el contingut actual
 <img alt="Error" src="../slapcat.png" />  </p>
-<p><img alt="Error" src="../lsdesc.png" /></p>
-<p><img alt="Error" src="../grupld.png" /></p>
+<p>Usarem els fitxes prefets pera a crear els grups i usuaris
+<img alt="Error" src="../lsdesc.png" /></p>
+<p>En les següents dues captures adapto els fitxes al meu domini
+<img alt="Error" src="../grupld.png" /></p>
 <p><img alt="Error" src="../usuld.png" /></p>
 <p><img alt="pendent" src="./pendentld.png" />  </p>
 <ul>
@@ -131,20 +135,28 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <li><code>-f</code>: Indica el fitxer LDIF amb les dades a afegir.  </li>
 </ul>
 <p><img alt="Error" src="../ldapadd99.png" /></p>
-<p><img alt="Error" src="../slapcat2.png" /></p>
+<p>I aquí un apartat posterior a la configuració
+<img alt="Error" src="../slapcat2.png" /></p>
 <p>Client+------------------------------------------</p>
-<p><img alt="Error" src="../installnscd.png" /></p>
-<p><img alt="Error" src="../ldapconf1.png" /></p>
-<p><img alt="Error" src="../ldapconf2.png" /></p>
-<p><img alt="Error" src="../ldapconf3.png" /></p>
-<p><img alt="Error" src="../ldapconf4.png" /></p>
+<p>Instal·lació de nscd
+<img alt="Error" src="../installnscd.png" /></p>
+<h3 id="configuracio-de-ldap-auth-config">Configuració de ldap-auth-config</h3>
+<p>Posarem la IP del servidor LDAP.
+<img alt="Error" src="../ldapconf1.png" /></p>
+<p>Proporcionarem el nom del domini
+<img alt="Error" src="../ldapconf2.png" /></p>
+<p>I la quenta que usarem
+<img alt="Error" src="../ldapconf3.png" /></p>
+<p>Instal·larem aquest paquet para que el sistema Linux s'autentifique mediant-te un servidor LDAP
+<img alt="Error" src="../ldapconf4.png" /></p>
 <p><img alt="Error" src="../ldapconf5.png" /></p>
 <p><img alt="Error" src="../ldapconf5.png" /></p>
 <p>Si lo client no se valida sa de fe un reconfigure del paquet anterior</p>
 <p><img alt="Error" src="../nsswitch.png" /></p>
 <p><img alt="Error" src="../commonpas.png" /></p>
 <p><img alt="Error" src="../commonses.png" /></p>
-<p><img alt="Error" src="../prova789.png" /></p>
+<p>Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment
+<img alt="Error" src="../prova789.png" /></p>
 <h2 id="gestio-dusuaris">Gestió d’usuaris</h2>
 <h2 id="unir-equips-al-domini">Unir equips al domini</h2>
 <h2 id="servidor-samba">Servidor SAMBA</h2>
