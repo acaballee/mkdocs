@@ -86,7 +86,7 @@ Si lo client no se valida sa de fe un reconfigure del paquet anterior
 
 ![Error](./commonses.png)
 
-Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment
+Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment  
 ![Error](./prova789.png)
 
 ## Gestió d’usuaris 
