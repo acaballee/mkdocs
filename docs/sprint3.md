@@ -33,6 +33,8 @@ Aquí veurem la configuració que he aplicat al servidor LDAP.
 En aquesta comanda veurem el contingut actual
 ![Error](./slapcat.png)  
 
+## Gestió d’usuaris i grups
+
 Usarem els fitxes prefets pera a crear els grups i usuaris
 ![Error](./lsdesc.png)
 
@@ -55,7 +57,7 @@ I aquí un apartat posterior a la configuració
 ![Error](./slapcat2.png)
 
 
-Client+------------------------------------------
+## Unir equips al domini
 
 Instal·lació de nscd
 ![Error](./installnscd.png)
@@ -89,10 +91,10 @@ Si lo client no se valida sa de fe un reconfigure del paquet anterior
 Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment  
 ![Error](./prova789.png)
 
-## Gestió d’usuaris 
 
 
-## Unir equips al domini
+
+
 
 
 ## Servidor SAMBA

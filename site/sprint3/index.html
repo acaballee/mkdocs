@@ -54,13 +54,15 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#preparatius">Preparatius</a>
     </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestio-dusuaris-i-grups">Gestió d’usuaris i grups</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unir-equips-al-domini">Unir equips al domini</a>
+        <ul>
     <li class="toctree-l3"><a class="reference internal" href="#configuracio-de-ldap-auth-config">Configuració de ldap-auth-config</a>
     </li>
         </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#gestio-dusuaris">Gestió d’usuaris</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#unir-equips-al-domini">Unir equips al domini</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#servidor-samba">Servidor SAMBA</a>
     </li>
@@ -121,6 +123,7 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <p><img alt="Error" src="../recon6.png" />  </p>
 <p>En aquesta comanda veurem el contingut actual
 <img alt="Error" src="../slapcat.png" />  </p>
+<h2 id="gestio-dusuaris-i-grups">Gestió d’usuaris i grups</h2>
 <p>Usarem els fitxes prefets pera a crear els grups i usuaris
 <img alt="Error" src="../lsdesc.png" /></p>
 <p>En les següents dues captures adapto els fitxes al meu domini
@@ -137,7 +140,7 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <p><img alt="Error" src="../ldapadd99.png" /></p>
 <p>I aquí un apartat posterior a la configuració
 <img alt="Error" src="../slapcat2.png" /></p>
-<p>Client+------------------------------------------</p>
+<h2 id="unir-equips-al-domini">Unir equips al domini</h2>
 <p>Instal·lació de nscd
 <img alt="Error" src="../installnscd.png" /></p>
 <h3 id="configuracio-de-ldap-auth-config">Configuració de ldap-auth-config</h3>
@@ -157,8 +160,6 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <p><img alt="Error" src="../commonses.png" /></p>
 <p>Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment<br />
 <img alt="Error" src="../prova789.png" /></p>
-<h2 id="gestio-dusuaris">Gestió d’usuaris</h2>
-<h2 id="unir-equips-al-domini">Unir equips al domini</h2>
 <h2 id="servidor-samba">Servidor SAMBA</h2>
 <h2 id="servidor-nfs">Servidor NFS</h2>
               
