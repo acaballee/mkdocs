@@ -93,14 +93,62 @@ Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb 
 
 
 
+## Recursos en xarxa
+
+Els servidors **Samba** i **NFS** serveixen per a compartir recursos en xarxa.
+
+- El servidor **NFS** autentica a nivell de **màquina (host)** i no d'usuari.
+- Permetre autenticació a nivell d'usuari amb **NFS** és complex i requereix **Kerberos**.
+- Per aquest motiu, és més fàcil utilitzar **Samba** si es vol control d’accés per usuari.
 
 
 
-
-## Servidor SAMBA
-
-
-##Servidor NFS
+### Servidor SAMBA
 
 
 
+![Error](./prova789.png)
+
+![Error](./prova789.png)
+
+![Error](./prova789.png)
+
+![Error](./prova789.png)
+
+![Error](./prova789.png)
+
+###Servidor NFS
+
+
+![Error](./instanfs.png)
+
+![Error](./nanoexports.png)
+
+![Error](./restartnfs.png)
+
+Client Windous
+
+![Error](./clientwind.png)
+
+![Error](./clientwind2.png)
+
+Client Ubuntu  
+![Error](./clientubu1.png)
+
+![Error](./clientubu2.png)
+
+
+##Entorns grafics
+En el meu cas he triat  LDAP Account Manager (LAM) que és una eina web per gestionar usuaris, grups i permisos en servidors LDAP de manera fàcil i visual.  
+
+
+![Error](./installphp5.png)
+
+
+![Error](./ldap121.png)
+
+
+![Error](./ldap122.png)
+
+
+![Error](./ldap123.png)
