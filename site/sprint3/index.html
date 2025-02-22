@@ -64,15 +64,23 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entorns-grafics">Entorns grafics</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#recursos-en-xarxa">Recursos en xarxa</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#servidor-samba">Servidor SAMBA</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#servidor-nfs">Servidor NFS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#teoria">Teoria:</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#entorns-grafics">Entorns grafics</a>
+    <li class="toctree-l3"><a class="reference internal" href="#servidor-nfs">Servidor NFS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#perfils-mobils">Perfils mòbils</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -166,6 +174,12 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <p><img alt="Error" src="../commonses.png" /></p>
 <p>Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment<br />
 <img alt="Error" src="../prova789.png" /></p>
+<h2 id="entorns-grafics">Entorns grafics</h2>
+<p>En el meu cas he triat  LDAP Account Manager (LAM) que és una eina web per gestionar usuaris, grups i permisos en servidors LDAP de manera fàcil i visual.  </p>
+<p><img alt="Error" src="../installphp5.png" /></p>
+<p><img alt="Error" src="../ldap121.png" /></p>
+<p><img alt="Error" src="../ldap122.png" /></p>
+<p><img alt="Error" src="../ldap123.png" /></p>
 <h2 id="recursos-en-xarxa">Recursos en xarxa</h2>
 <p>Els servidors <strong>Samba</strong> i <strong>NFS</strong> serveixen per a compartir recursos en xarxa.</p>
 <ul>
@@ -174,11 +188,25 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <li>Per aquest motiu, és més fàcil utilitzar <strong>Samba</strong> si es vol control d’accés per usuari.</li>
 </ul>
 <h3 id="servidor-samba">Servidor SAMBA</h3>
-<p><img alt="Error" src="../prova789.png" /></p>
-<p><img alt="Error" src="../prova789.png" /></p>
-<p><img alt="Error" src="../prova789.png" /></p>
-<p><img alt="Error" src="../prova789.png" /></p>
-<p><img alt="Error" src="../prova789.png" /></p>
+<h4 id="teoria">Teoria:</h4>
+<p>El servidor Samba, a diferència del servidor NFS, permet l'autenticació a nivell d'usuari.
+Permet la compartició de recursos que no són només carpetes, sinó també impressores.
+Samba pot treballar conjuntament amb LDAP per utilitzar autenticació a nivell d'usuaris.
+Samba permet la connexió de clients tant de Linux com de Windows.</p>
+<p><img alt="Error" src="../installsmb.png" /></p>
+<p><img alt="Error" src="../grepperfils.png" /></p>
+<p><img alt="Error" src="../configperfis.png" /></p>
+<p><img alt="Error" src="../creauser.png" /></p>
+<p><img alt="Error" src="../comptail.png" /></p>
+<p><img alt="Error" src="../addgrupdam.png" /></p>
+<p><img alt="Error" src="../smbcontra.png" /></p>
+<p>Client:</p>
+<p><img alt="Error" src="../installsmbclient.png" /></p>
+<p><img alt="Error" src="../consmb.png" /></p>
+<p>Raul crea</p>
+<p><img alt="Error" src="../compraul.png" /></p>
+<p>Enric no crea</p>
+<p><img alt="pendent" src="./enricno.png" /></p>
 <h3 id="servidor-nfs">Servidor NFS</h3>
 <p><img alt="Error" src="../instanfs.png" /></p>
 <p><img alt="Error" src="../nanoexports.png" /></p>
@@ -189,12 +217,16 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 <p>Client Ubuntu<br />
 <img alt="Error" src="../clientubu1.png" /></p>
 <p><img alt="Error" src="./clientubu2.png" /></p>
-<h2 id="entorns-grafics">Entorns grafics</h2>
-<p>En el meu cas he triat  LDAP Account Manager (LAM) que és una eina web per gestionar usuaris, grups i permisos en servidors LDAP de manera fàcil i visual.  </p>
-<p><img alt="Error" src="../installphp5.png" /></p>
-<p><img alt="Error" src="../ldap121.png" /></p>
-<p><img alt="Error" src="../ldap122.png" /></p>
-<p><img alt="Error" src="../ldap123.png" /></p>
+<h4 id="perfils-mobils">Perfils mòbils</h4>
+<p><img alt="Error" src="../instalnfsserver.png" /></p>
+<p><img alt="Error" src="../etcnanoexport.png" /></p>
+<p><img alt="Error" src="../grupldif.png" /></p>
+<p><img alt="Error" src="../usuldif.png" /></p>
+<p><img alt="Error" src="../aplicaldif.png" /></p>
+<p>Client:</p>
+<p><img alt="Error" src="../instalclinfs.png" /></p>
+<p><img alt="Error" src="../etcfstabnano.png" /></p>
+<p><img alt="Error" src="../comprovacioalu54.png" /></p>
               
             </div>
           </div><footer>

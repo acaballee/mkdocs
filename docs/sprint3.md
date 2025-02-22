@@ -91,6 +91,20 @@ Si lo client no se valida sa de fe un reconfigure del paquet anterior
 Com podem veure al final hem aconseguit connecta el client al servidor LDAP amb l'usuari creat anteriorment  
 ![Error](./prova789.png)
 
+##Entorns grafics
+En el meu cas he triat  LDAP Account Manager (LAM) que és una eina web per gestionar usuaris, grups i permisos en servidors LDAP de manera fàcil i visual.  
+
+
+![Error](./installphp5.png)
+
+
+![Error](./ldap121.png)
+
+
+![Error](./ldap122.png)
+
+
+![Error](./ldap123.png)
 
 
 ## Recursos en xarxa
@@ -104,18 +118,40 @@ Els servidors **Samba** i **NFS** serveixen per a compartir recursos en xarxa.
 
 
 ### Servidor SAMBA
+####Teoria:
+El servidor Samba, a diferència del servidor NFS, permet l'autenticació a nivell d'usuari.
+Permet la compartició de recursos que no són només carpetes, sinó també impressores.
+Samba pot treballar conjuntament amb LDAP per utilitzar autenticació a nivell d'usuaris.
+Samba permet la connexió de clients tant de Linux com de Windows.
 
 
+![Error](./installsmb.png)
 
-![Error](./prova789.png)
+![Error](./grepperfils.png)
 
-![Error](./prova789.png)
+![Error](./configperfis.png)
 
-![Error](./prova789.png)
+![Error](./creauser.png)
 
-![Error](./prova789.png)
+![Error](./comptail.png)
 
-![Error](./prova789.png)
+![Error](./addgrupdam.png)
+
+![Error](./smbcontra.png)
+
+Client:
+
+![Error](./installsmbclient.png)
+
+![Error](./consmb.png)
+
+Raul crea
+
+![Error](./compraul.png)
+
+Enric no crea
+
+![pendent](./enricno.png)
 
 ###Servidor NFS
 
@@ -137,18 +173,29 @@ Client Ubuntu
 
 ![Error](./clientubu2.png)
 
+####Perfils mòbils
 
-##Entorns grafics
-En el meu cas he triat  LDAP Account Manager (LAM) que és una eina web per gestionar usuaris, grups i permisos en servidors LDAP de manera fàcil i visual.  
+![Error](./instalnfsserver.png)
 
+![Error](./etcnanoexport.png)
 
-![Error](./installphp5.png)
-
-
-![Error](./ldap121.png)
+![Error](./grupldif.png)
 
 
-![Error](./ldap122.png)
 
 
-![Error](./ldap123.png)
+
+![Error](./usuldif.png)
+
+![Error](./aplicaldif.png)
+
+Client:
+
+![Error](./instalclinfs.png)
+
+![Error](./etcfstabnano.png)
+
+![Error](./comprovacioalu54.png)
+
+
+
