@@ -166,7 +166,7 @@ Enric no ja que no tenia el permisos corresponents
 Instal·larem el paquet nfs-kernel-server
 ![Error](./instanfs.png)
 
-## Configuració de /etc/exports
+#### Configuració de /etc/exports
 
 Afigirem una línia de configuració al fitxer `/etc/exports`:
 
