@@ -124,77 +124,118 @@ Permet la compartició de recursos que no són només carpetes, sinó també imp
 Samba pot treballar conjuntament amb LDAP per utilitzar autenticació a nivell d'usuaris.
 Samba permet la connexió de clients tant de Linux com de Windows.
 
-
+#### Instal·lació I Configuració 
 ![Error](./installsmb.png)
 
+Crearem la carpeta de perfils a l'arrel i li donarem els permisos corresponents
 ![Error](./grepperfils.png)
 
+Anirem al fitxe /etc/samba i configurarem la carpeta compartida
 ![Error](./configperfis.png)
 
+Crea els usuaris raul, enric i walid sense directori personal i sense accés a la línia d'ordres
 ![Error](./creauser.png)
 
+Verifica que els usuaris s'han creat correctament
 ![Error](./comptail.png)
 
+Crem el grup dam i afegim els usuaris raul, walid i enric
 ![Error](./addgrupdam.png)
 
+Posarem contrasenyes del samba a els usuaris raul, walid i enric
 ![Error](./smbcontra.png)
 
 Client:
-
+Una vegada al client instal·larem smbclient
 ![Error](./installsmbclient.png)
 
+Ens connectarem amb el mode anònim i els diferents usuaris
 ![Error](./consmb.png)
 
-Raul crea
+Raul a pogut crea i edita fitches
 
 ![Error](./compraul.png)
 
-Enric no crea
+Enric no ja que no tenia el permisos corresponents
 
 ![pendent](./enricno.png)
 
 ###Servidor NFS
+#### Instal·lació I Configuració 
 
-
+Instal·larem el paquet nfs-kernel-server
 ![Error](./instanfs.png)
+
+## Configuració de /etc/exports
+
+Afigirem una línia de configuració al fitxer `/etc/exports`:
+
+- **/compartida**: Directori compartit.  
+- **\***: Accés per a qualsevol client de xarxa.  
+- **rw**: Permet lectura i escriptura.  
+- **sync**: Sincronitza els canvis a disc immediatament.  
+- **no_subtree_check**: Millora el rendiment desactivant comprovacions de subdirectoris.  
 
 ![Error](./nanoexports.png)
 
+Reiniciem el servei NFS per aplicar els canvis.
 ![Error](./restartnfs.png)
 
-Client Windous
-
+Client Windous  
+El recurs \10.0.2.4\compartida funciona des del client Windows
 ![Error](./clientwind.png)
 
 ![Error](./clientwind2.png)
 
 Client Ubuntu  
+Al client ubuntu necessitarem insta-la el paquet nfs-common i rpcbind
 ![Error](./clientubu1.png)
 
 ![Error](./clientubu2.png)
 
 ####Perfils mòbils
-
+Instal·larem el paquet nfs-kernel-server
 ![Error](./instalnfsserver.png)
+
+
+Afegirem la configuracio de perfils
+- **rw**: Accés de lectura i escriptura.  
+- **sync**: Escriu els canvis immediatament al disc.  
+- **no_root_squash**: Permet que el client NFS accedeixi com a root al servidor (**compte amb la seguretat!**).  
+- **no_subtree_check**: Millora el rendiment desactivant comprovacions de subdirectoris.  
 
 ![Error](./etcnanoexport.png)
 
+Configuracio del grup
 ![Error](./grupldif.png)
 
-
-
-
-
+Configuracio del usuari
 ![Error](./usuldif.png)
 
+Afegirem els fitxes usu i grup a LDAP:
 ![Error](./aplicaldif.png)
 
 Client:
-
+Al client instal·larem nfs-common i rpcbind
 ![Error](./instalclinfs.png)
+
+Muntarem un recurs el qual:  
+- **10.0.2.4:/perfils**: Indica el servidor NFS (IP) i el directori compartit.  
+- **/perfils**: Punt de muntatge local on es veurà el recurs compartit.  
+- **nfs**: Tipus de sistema de fitxers (NFS).  
+- **auto**: Es munta automàticament en arrencar el sistema.  
+- **noatime**: No actualitza la data d'accés als fitxers (millora el rendiment).  
+- **nolock**: Desactiva el bloqueig de fitxers NFS (útil per compatibilitat).  
+- **bg**: Si el muntatge falla, ho intenta en segon pla (no bloqueja l'arrencada).  
+- **nfsvers=3**: Utilitza la versió 3 de NFS.  
+- **intr**: Permet interrompre operacions NFS si el servidor no respon.  
+- **tcp**: Utilitza el protocol TCP per a la comunicació (més fiable que UDP).  
+- **actimeo=1800**: Cacheja els atributs de fitxers durant 1800 segons (30 minuts) per millorar el rendiment.  
+- **0 0**: No es fa còpia de seguretat amb dump i no es comprova el sistema de fitxers amb fsck.  
 
 ![Error](./etcfstabnano.png)
 
+Comprovacio amb client ubuntu
 ![Error](./comprovacioalu54.png)
 
 

@@ -72,13 +72,21 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#teoria">Teoria:</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#installacio-i-configuracio">Instal·lació I Configuració</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#servidor-nfs">Servidor NFS</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#perfils-mobils">Perfils mòbils</a>
+    <li class="toctree-l4"><a class="reference internal" href="#installacio-i-configuracio_1">Instal·lació I Configuració</a>
     </li>
         </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuracio-de-etcexports">Configuració de /etc/exports</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#perfils-mobils">Perfils mòbils</a>
     </li>
         </ul>
     </li>
@@ -193,40 +201,87 @@ Tot servidor té per a tindre la IP fitxa aniria bé configura netplan però par
 Permet la compartició de recursos que no són només carpetes, sinó també impressores.
 Samba pot treballar conjuntament amb LDAP per utilitzar autenticació a nivell d'usuaris.
 Samba permet la connexió de clients tant de Linux com de Windows.</p>
+<h4 id="installacio-i-configuracio">Instal·lació I Configuració</h4>
 <p><img alt="Error" src="../installsmb.png" /></p>
-<p><img alt="Error" src="../grepperfils.png" /></p>
-<p><img alt="Error" src="../configperfis.png" /></p>
-<p><img alt="Error" src="../creauser.png" /></p>
-<p><img alt="Error" src="../comptail.png" /></p>
-<p><img alt="Error" src="../addgrupdam.png" /></p>
-<p><img alt="Error" src="../smbcontra.png" /></p>
-<p>Client:</p>
-<p><img alt="Error" src="../installsmbclient.png" /></p>
-<p><img alt="Error" src="../consmb.png" /></p>
-<p>Raul crea</p>
+<p>Crearem la carpeta de perfils a l'arrel i li donarem els permisos corresponents
+<img alt="Error" src="../grepperfils.png" /></p>
+<p>Anirem al fitxe /etc/samba i configurarem la carpeta compartida
+<img alt="Error" src="../configperfis.png" /></p>
+<p>Crea els usuaris raul, enric i walid sense directori personal i sense accés a la línia d'ordres
+<img alt="Error" src="../creauser.png" /></p>
+<p>Verifica que els usuaris s'han creat correctament
+<img alt="Error" src="../comptail.png" /></p>
+<p>Crem el grup dam i afegim els usuaris raul, walid i enric
+<img alt="Error" src="../addgrupdam.png" /></p>
+<p>Posarem contrasenyes del samba a els usuaris raul, walid i enric
+<img alt="Error" src="../smbcontra.png" /></p>
+<p>Client:
+Una vegada al client instal·larem smbclient
+<img alt="Error" src="../installsmbclient.png" /></p>
+<p>Ens connectarem amb el mode anònim i els diferents usuaris
+<img alt="Error" src="../consmb.png" /></p>
+<p>Raul a pogut crea i edita fitches</p>
 <p><img alt="Error" src="../compraul.png" /></p>
-<p>Enric no crea</p>
-<p><img alt="pendent" src="./enricno.png" /></p>
+<p>Enric no ja que no tenia el permisos corresponents</p>
+<p><img alt="pendent" src="../enricno.png" /></p>
 <h3 id="servidor-nfs">Servidor NFS</h3>
-<p><img alt="Error" src="../instanfs.png" /></p>
+<h4 id="installacio-i-configuracio_1">Instal·lació I Configuració</h4>
+<p>Instal·larem el paquet nfs-kernel-server
+<img alt="Error" src="../instanfs.png" /></p>
+<h2 id="configuracio-de-etcexports">Configuració de /etc/exports</h2>
+<p>Afigirem una línia de configuració al fitxer <code>/etc/exports</code>:</p>
+<ul>
+<li><strong>/compartida</strong>: Directori compartit.  </li>
+<li><strong>*</strong>: Accés per a qualsevol client de xarxa.  </li>
+<li><strong>rw</strong>: Permet lectura i escriptura.  </li>
+<li><strong>sync</strong>: Sincronitza els canvis a disc immediatament.  </li>
+<li><strong>no_subtree_check</strong>: Millora el rendiment desactivant comprovacions de subdirectoris.  </li>
+</ul>
 <p><img alt="Error" src="../nanoexports.png" /></p>
-<p><img alt="Error" src="../restartnfs.png" /></p>
-<p>Client Windous</p>
-<p><img alt="Error" src="../clientwind.png" /></p>
+<p>Reiniciem el servei NFS per aplicar els canvis.
+<img alt="Error" src="../restartnfs.png" /></p>
+<p>Client Windous<br />
+El recurs \10.0.2.4\compartida funciona des del client Windows
+<img alt="Error" src="../clientwind.png" /></p>
 <p><img alt="Error" src="../clientwind2.png" /></p>
 <p>Client Ubuntu<br />
+Al client ubuntu necessitarem insta-la el paquet nfs-common i rpcbind
 <img alt="Error" src="../clientubu1.png" /></p>
 <p><img alt="Error" src="./clientubu2.png" /></p>
 <h4 id="perfils-mobils">Perfils mòbils</h4>
-<p><img alt="Error" src="../instalnfsserver.png" /></p>
+<p>Instal·larem el paquet nfs-kernel-server
+<img alt="Error" src="../instalnfsserver.png" /></p>
+<p>Afegirem la configuracio de perfils
+- <strong>rw</strong>: Accés de lectura i escriptura.<br />
+- <strong>sync</strong>: Escriu els canvis immediatament al disc.<br />
+- <strong>no_root_squash</strong>: Permet que el client NFS accedeixi com a root al servidor (<strong>compte amb la seguretat!</strong>).<br />
+- <strong>no_subtree_check</strong>: Millora el rendiment desactivant comprovacions de subdirectoris.  </p>
 <p><img alt="Error" src="../etcnanoexport.png" /></p>
-<p><img alt="Error" src="../grupldif.png" /></p>
-<p><img alt="Error" src="../usuldif.png" /></p>
-<p><img alt="Error" src="../aplicaldif.png" /></p>
-<p>Client:</p>
-<p><img alt="Error" src="../instalclinfs.png" /></p>
+<p>Configuracio del grup
+<img alt="Error" src="../grupldif.png" /></p>
+<p>Configuracio del usuari
+<img alt="Error" src="../usuldif.png" /></p>
+<p>Afegirem els fitxes usu i grup a LDAP:
+<img alt="Error" src="../aplicaldif.png" /></p>
+<p>Client:
+Al client instal·larem nfs-common i rpcbind
+<img alt="Error" src="../instalclinfs.png" /></p>
+<p>Muntarem un recurs el qual:<br />
+- <strong>10.0.2.4:/perfils</strong>: Indica el servidor NFS (IP) i el directori compartit.<br />
+- <strong>/perfils</strong>: Punt de muntatge local on es veurà el recurs compartit.<br />
+- <strong>nfs</strong>: Tipus de sistema de fitxers (NFS).<br />
+- <strong>auto</strong>: Es munta automàticament en arrencar el sistema.<br />
+- <strong>noatime</strong>: No actualitza la data d'accés als fitxers (millora el rendiment).<br />
+- <strong>nolock</strong>: Desactiva el bloqueig de fitxers NFS (útil per compatibilitat).<br />
+- <strong>bg</strong>: Si el muntatge falla, ho intenta en segon pla (no bloqueja l'arrencada).<br />
+- <strong>nfsvers=3</strong>: Utilitza la versió 3 de NFS.<br />
+- <strong>intr</strong>: Permet interrompre operacions NFS si el servidor no respon.<br />
+- <strong>tcp</strong>: Utilitza el protocol TCP per a la comunicació (més fiable que UDP).<br />
+- <strong>actimeo=1800</strong>: Cacheja els atributs de fitxers durant 1800 segons (30 minuts) per millorar el rendiment.<br />
+- <strong>0 0</strong>: No es fa còpia de seguretat amb dump i no es comprova el sistema de fitxers amb fsck.  </p>
 <p><img alt="Error" src="../etcfstabnano.png" /></p>
-<p><img alt="Error" src="../comprovacioalu54.png" /></p>
+<p>Comprovacio amb client ubuntu
+<img alt="Error" src="../comprovacioalu54.png" /></p>
               
             </div>
           </div><footer>
