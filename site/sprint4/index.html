@@ -54,9 +54,27 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Sprint4</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+    <li class="toctree-l2"><a class="reference internal" href="#monotiratzacio-conexio-remota">Monotiratzacio conexio remota</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
+    <li class="toctree-l2"><a class="reference internal" href="#administracio-remota-team-viewer-vnc">Administració Remota (TEAM VIEWER, VNC)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#team-viwer">Team Viwer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#llicenciament">Llicenciament</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gpl-general-public-license">GPL (General Public License)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lgpl-lesser-general-public-license">LGPL (Lesser General Public License)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mpl-mozilla-public-license">MPL (Mozilla Public License)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bsd-berkeley-software-distribution">BSD (Berkeley Software Distribution)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domini-public">Domini Públic</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -88,21 +106,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="holaaaaaaaaaaaa">Holaaaaaaaaaaaa</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+                <h1 id="sprint-4">Sprint 4</h1>
+<h2 id="monotiratzacio-conexio-remota">Monotiratzacio  conexio remota</h2>
+<p>Veurem el contingut del directori /var/log/, amb diversos fitxers de registre del sistema.
+<img alt="Error" src="../varlogls.png" /></p>
+<p>Editarem el fitxe etc/logrotate.conf, que defineix polítiques
+<img alt="Error" src="../nanologrotate.png" /></p>
+<p><img alt="Error" src="../lslogrotate.png" /></p>
+<p>Enviament d'un missatge de registre amb logger
+<img alt="Error" src="../logger.png" /></p>
+<p>La verificació del log /var/log/mail.log
+<img alt="Error" src="../catmaillog.png" /></p>
+<p><img alt="Error" src="../default.png" /></p>
+<h2 id="administracio-remota-team-viewer-vnc">Administració Remota (TEAM VIEWER, VNC)</h2>
+<h3 id="team-viwer">Team Viwer</h3>
+<p>Instal·lació a través de la pàgina web
+<img alt="Error" src="../instalacioTIM5.png" />
+ID i contrasenya (Cal iniciar sessió en el controlador)
+<img alt="Error" src="../instalacioTIM4.png" />
+Poso la contrasenya del ordenador remot
+<img alt="Error" src="../instalacioTIM1.png" />
+En el cas d'Ubuntu cada vegada que em connecto he de donar permís d'interacció remota
+<img alt="Error" src="../instalacioTIM2.png" />
+I finalment ja funciona se'n capaços de controlar el ordinador remot
+<img alt="Error" src="../instalacioTIM3.png" /></p>
+<h2 id="llicenciament">Llicenciament</h2>
+<p>Tipus de llicències<br />
+Les llicències de programari defineixen com es pot utilitzar, modificar i redistribuir el codi. </p>
+<h3 id="gpl-general-public-license">GPL (General Public License)</h3>
+<p>Llicència Pública General. Garanteix que el programari romangui lliure i qualsevol modificació també s’hagi de compartir amb la mateixa llicència.</p>
+<h3 id="lgpl-lesser-general-public-license">LGPL (Lesser General Public License)</h3>
+<p>Llicència Pública General Menor. Similar a la GPL, però permet que llibreries lliures s’utilitzin en programari privatiu.</p>
+<h3 id="mpl-mozilla-public-license">MPL (Mozilla Public License)</h3>
+<p>Llicència Pública de Mozilla. Llicència híbrida que permet combinar codi lliure amb propietari, però exigeix que les modificacions del codi original segueixin sent lliures.</p>
+<h3 id="bsd-berkeley-software-distribution">BSD (Berkeley Software Distribution)</h3>
+<p>Distribució de Programari de Berkeley. Llicència permissiva que permet utilitzar el codi en projectes privats sense obligacions de compartir les modificacions.</p>
+<h3 id="domini-public">Domini Públic</h3>
+<p>El programari és lliure de drets d'autor i es pot utilitzar, modificar i redistribuir sense restriccions.</p>
+<p><img alt="Error" src="../genio.png" /></p>
+<p>En el meu cas si estigues fent un projecte a nibell estudi i millora triaria BSD perquè ofereix màxima llibertat: permet reutilitzar el codi sense obligacions, fins i tot en programari privatiu. Això facilita la seva adopció per empreses i desenvolupadors. A més, només requereix crèdit a l’autor.</p>
               
             </div>
           </div><footer>
