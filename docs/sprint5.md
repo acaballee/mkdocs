@@ -1,0 +1,53 @@
+# Sprint5
+##Instalacions
+###Windous Server
+
+Per escomença seleccionarem l'idioma
+![Error](./instalacioWS1.png)
+
+I començarem amb la instal·lació
+![Error](./instalacioWS11.png)
+
+En el meu cas he triat la versió amb interfície gràfica
+![Error](./instalacioWS12.png)
+
+He fet les particions manualment i he creat una partició per al futur
+![Error](./instalacioWS13.png)
+
+![Error](./instalacioWS14.png)
+
+Ara toca espera asta que es completi la instal·lació
+![Error](./instalacioWS15.png)
+
+Per finalista configurarem l'usuari administrador
+![Error](./instalacioWS16.png)
+
+![Error](./instalacioWS17.png)
+
+Una vegada dins posaré una IP i DNS estàtic
+![Error](./instalacioWS18.png)
+
+![Error](./instalacioWS19.png)
+
+
+###Windous 10
+En el meu cas he triat la versió PRO ja que incorpora més funcionalitats
+![Error](./instalacioW101.png)  
+
+He fet les particions manualment i he creat una partició sol·licitada per la professora
+![Error](./instalacioW102.png)
+
+Triaríem un idioma
+![Error](./instalacioW103.png)
+
+![Error](./instalacioW104.png)
+
+Per finalista configurarem un usuari
+![Error](./instalacioW105.png)
+
+![Error](./instalacioW106.png)  
+
+Comprovació de la partició:
+![Error](./instalacioW107.png)  
+
+![Error](./instalacioW10.png)
