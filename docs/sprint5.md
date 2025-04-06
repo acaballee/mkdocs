@@ -51,3 +51,20 @@ Comprovació de la partició:
 ![Error](./instalacioW107.png)  
 
 ![Error](./instalacioW10.png)
+
+
+Copies de seguretat
+![Error](./copia1.png)
+
+![Error](./copia2.png)
+
+![Error](./copia3.png)
+
+
+
+##Dual Boot
+GRUB
+![Error](./grub1.png)
+
+
+
