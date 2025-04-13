@@ -71,12 +71,16 @@ Llista de processos que poden ser considerats **no essencials**
 
 ##Gestió de permisos
 
+Crearem la carpeta Projectes i modificarem els seus permisos
 ![Error](./carpetacontrol0.png)
 
+Primer deshabilitarem la herència de permisos
 ![Error](./carpetacontrol3.png)
 
+Afegirem el grup Limitats i els donarem control total
 ![Error](./carpetacontrol1.png)
 
+Final met eliminarem la resta d'usuaris i en s quedarà així
 ![Error](./carpetacontrol2.png)
 
 
