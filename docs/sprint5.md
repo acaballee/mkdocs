@@ -24,10 +24,10 @@ Per finalista configurarem l'usuari administrador
 
 ![Error](./instalacioWS17.png)
 
-Una vegada dins posaré una IP i DNS estàtic
-![Error](./instalacioWS18.png)
 
-![Error](./instalacioWS19.png)
+![Error](./instalaciored11.png)
+
+
 
 
 ###Windous 10
@@ -52,8 +52,37 @@ Comprovació de la partició:
 
 ![Error](./instalacioW10.png)
 
+##Xarxa Basica  
+Per a posa un IP fixa obrirem el panel de control i anirem a Rades e internet
+![Error](./xarxa1.png)  
 
-Copies de seguretat
+Anirem a Ethernet
+![Error](./xarxa2.png)  
+
+Propiedades i IPv4
+![Error](./xarxa3.png)
+
+Una vegada dins posaré una IP i DNS estàtic
+![Error](./instalacioWS18.png)
+
+Validacio:  
+![Error](./instalacioWS19.png)
+
+##Instal·lacions d'aplicacions
+
+Farem una instal·lació senzilla a través de la interfície gràfica
+![Error](./aplicacions1.png)
+
+Donarem permisos al instal·lador
+![Error](./aplicacions2.png)
+
+Esperarem a que es complete la descàrrega
+![Error](./aplicacions3.png)
+
+I finalment ja tindrem instal·lat Chrome
+![Error](./aplicacions4.png)
+
+##Copies de seguretat
 ![Error](./copia1.png)
 
 ![Error](./copia2.png)

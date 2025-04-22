@@ -4,8 +4,10 @@ nav:
   - Sprint2: sprint2.md
   - Sprint3: sprint3.md
   - Sprint4: sprint4.md
-  - Sprint5: sprint5.md
-  - Sprint6: sprint6.md
+  - Sprint1 windows: sprint5.md
+  - Sprint2 windows: sprint6.md
+  - Sprint3 windows: sprint7.md
+  - Sprint4 windows: sprint8.md
   - CCC: ccc.md
   
 theme: readthedocs
