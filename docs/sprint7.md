@@ -23,7 +23,7 @@ Li posarem nom (important per després)
 
 ##Unir equips al domini 
 
-Entrarem a un client Windows, configuració i Obtener acceso a trabajo  
+Entrarem a un client Windows(Pro), configuració i Obtener acceso a trabajo  
 ![Error](./unirdomini1.png)
 
 Connectar i unir este dispositivo a un domino AD  
@@ -44,7 +44,35 @@ Reiniciarem i finalment i a tindrem accés al servidor AD
 
 
 ##Gestió del Domini AD
+Creació d'usuari (usat per a prova de connexió)  
+![Error](./gestioad1.png)
 
-![Error](./instalacioAD.png)
+![Error](./gestioad2.png)
+
+Creació d'unitat organitzativa  
+![Error](./gestioad4.png)
+
+![Error](./gestioad3.png)
+
+Usuari de la unitat organitzativa  
+![Error](./gestioad5.png)
+
+![Error](./gestioad6.png)
+
+![Error](./gestioad7.png)
+
+GPOs per a la unitat organitzativa  
+![Error](./gestioad9.png)
+
+Crearem la promera GPO  
+![Error](./gestioad8.png)
+
+![Error](./gpo1.png)
+
+![Error](./gpo12.png)
+
+
+
+
 
 
