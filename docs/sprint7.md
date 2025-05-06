@@ -69,9 +69,15 @@ Crearem la promera GPO
 
 ![Error](./gpo1.png)
 
+Des de aquí buscarem la directiva que ens interesse  
 ![Error](./gpo12.png)
 
+Per exemple que no puguin accedí a configuració ni panel de control  
+![Error](./gpo13.png)
 
+![Error](./gpo14.png)
+
+![Error](./gpo15.png)
 
 
 

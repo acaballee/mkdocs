@@ -2,24 +2,24 @@
 ##Instalacions
 ###Windous Server
 
-Per escomença seleccionarem l'idioma
+Per escomença seleccionarem l'idioma  
 ![Error](./instalacioWS1.png)
 
-I començarem amb la instal·lació
+I començarem amb la instal·lació  
 ![Error](./instalacioWS11.png)
 
-En el meu cas he triat la versió amb interfície gràfica
+En el meu cas he triat la versió amb interfície gràfica  
 ![Error](./instalacioWS12.png)
 
-He fet les particions manualment i he creat una partició per al futur
+He fet les particions manualment i he creat una partició per al futur  
 ![Error](./instalacioWS13.png)
 
 ![Error](./instalacioWS14.png)
 
-Ara toca espera asta que es completi la instal·lació
+Ara toca espera asta que es completi la instal·lació  
 ![Error](./instalacioWS15.png)
 
-Per finalista configurarem l'usuari administrador
+Per finalista configurarem l'usuari administrador  
 ![Error](./instalacioWS16.png)
 
 ![Error](./instalacioWS17.png)
@@ -31,10 +31,10 @@ Per finalista configurarem l'usuari administrador
 
 
 ###Windous 10
-En el meu cas he triat la versió PRO ja que incorpora més funcionalitats
+En el meu cas he triat la versió PRO ja que incorpora més funcionalitats  
 ![Error](./instalacioW101.png)  
 
-He fet les particions manualment i he creat una partició sol·licitada per la professora
+He fet les particions manualment i he creat una partició sol·licitada per la professora  
 ![Error](./instalacioW102.png)
 
 Triaríem un idioma
@@ -53,16 +53,16 @@ Comprovació de la partició:
 ![Error](./instalacioW10.png)
 
 ##Xarxa Basica  
-Per a posa un IP fixa obrirem el panel de control i anirem a Rades e internet
+Per a posa un IP fixa obrirem el panel de control i anirem a Rades e internet  
 ![Error](./xarxa1.png)  
 
-Anirem a Ethernet
+Anirem a Ethernet  
 ![Error](./xarxa2.png)  
 
-Propiedades i IPv4
+Propiedades i IPv4  
 ![Error](./xarxa3.png)
 
-Una vegada dins posaré una IP i DNS estàtic
+Una vegada dins posaré una IP i DNS estàtic  
 ![Error](./instalacioWS18.png)
 
 Validacio:  
@@ -70,16 +70,16 @@ Validacio:
 
 ##Instal·lacions d'aplicacions
 
-Farem una instal·lació senzilla a través de la interfície gràfica
+Farem una instal·lació senzilla a través de la interfície gràfica  
 ![Error](./aplicacions1.png)
 
-Donarem permisos al instal·lador
+Donarem permisos al instal·lador  
 ![Error](./aplicacions2.png)
 
-Esperarem a que es complete la descàrrega
+Esperarem a que es complete la descàrrega  
 ![Error](./aplicacions3.png)
 
-I finalment ja tindrem instal·lat Chrome
+I finalment ja tindrem instal·lat Chrome  
 ![Error](./aplicacions4.png)
 
 ##Copies de seguretat
@@ -92,7 +92,7 @@ I finalment ja tindrem instal·lat Chrome
 
 
 ##Dual Boot
-GRUB
+GRUB  
 ![Error](./grub1.png)
 
 
