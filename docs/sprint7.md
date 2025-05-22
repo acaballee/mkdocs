@@ -77,6 +77,7 @@ Per exemple que no puguin accedí a configuració ni panel de control
 
 ![Error](./gpo14.png)
 
+Al intentar accedí al panel de control ens saltarà aquesta advertència  
 ![Error](./gpo15.png)
 
 

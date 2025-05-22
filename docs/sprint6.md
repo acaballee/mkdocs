@@ -1,50 +1,50 @@
 # Sprint6
 ##Usuaris
 
-Crearem 2 usuaris per interfície usant administracion de equipos
+Crearem 2 usuaris per interfície usant administracion de equipos  
 ![Error](./adminieqi.png)
 
-Farem un Usuario nuevo
+Farem un Usuario nuevo  
 ![Error](./alumnelimi1.png)
 
-Li posarem nom i contrasenya
+Li posarem nom i contrasenya  
 ![Error](./alumnelimi2.png)
 
-Resultat
+Resultat  
 ![Error](./alumnelimi3.png)
 
-Ara crearem el grup Limitats
+Ara crearem el grup Limitats  
 ![Error](./gruplimi2.png)  
 
-Li posarem els 2 usuaris creats anteriorment
+Li posarem els 2 usuaris creats anteriorment  
 ![Error](./gruplimi.png)
 
 ##Script de còpia i automatització
 
-Particio i creacio de volumen NTFS
+Particio i creacio de volumen NTFS  
 ![Error](./particio0.png)
 
 ![Error](./particio.png)
 
-Li posarem el nom de Backups
+Li posarem el nom de Backups  
 ![Error](./particio2.png)
 
 ![Error](./particio3.png)
 
-Script en bat que copia el contingut de users i el pega al disc E\CopiesUusaris
+Script en bat que copia el contingut de users i el pega al disc E\CopiesUusaris  
 ![Error](./Script1.png)
 
 Resultat
 ![Error](./resultat.png)
 ##Gestió de processos i serveis
-La comanda tasklist mostra la llista de processos actius al sistema
+La comanda tasklist mostra la llista de processos actius al sistema  
 ![Error](./taskalist.png)
 
 ![Error](./procesosfixe.png)
 
 ###Processos no essencials del sistema
 
-Llista de processos que poden ser considerats **no essencials** 
+Llista de processos que poden ser considerats **no essencials**   
 
 | Nom del procés                    | Memòria usada     | Justificació per eliminar-lo                                       |
 |----------------------------------|-------------------|---------------------------------------------------------------------|
@@ -71,16 +71,16 @@ Llista de processos que poden ser considerats **no essencials**
 
 ##Gestió de permisos
 
-Crearem la carpeta Projectes i modificarem els seus permisos
+Crearem la carpeta Projectes i modificarem els seus permisos  
 ![Error](./carpetacontrol0.png)
 
-Primer deshabilitarem la herència de permisos
+Primer deshabilitarem la herència de permisos  
 ![Error](./carpetacontrol3.png)
 
-Afegirem el grup Limitats i els donarem control total
+Afegirem el grup Limitats i els donarem control total  
 ![Error](./carpetacontrol1.png)
 
-Final met eliminarem la resta d'usuaris i en s quedarà així
+Final met eliminarem la resta d'usuaris i en s quedarà així  
 ![Error](./carpetacontrol2.png)
 
 
